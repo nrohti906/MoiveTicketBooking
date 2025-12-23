@@ -1,69 +1,117 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: hsl(41, 84%, 52%);
+  margin: 0;
+  background: linear-gradient(120deg, hwb(46 4% 9%), hsl(54, 97%, 46%));
+  font-family: 'Segoe UI', sans-serif;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-family: Arial, sans-serif;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
 }
 
 .container {
-  text-align: center;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
 }
 
-.movie-container {
+.movie-card {
+  display: flex;
+  gap: 20px;
+  background: #1f2a40;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.movie-card img {
+  width: 180px;
+  border-radius: 10px;
+}
+
+.movie-info select {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+.legend {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
   margin: 20px 0;
 }
 
-select {
-  padding: 5px;
-  font-size: 16px;
-}
-
-.seat {
-  background-color: hsl(2, 87%, 44%);
-  height: 25px;
-  width: 30px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.seat.selected {
-  background-color: hsl(185, 89%, 48%);
-}
-
-.seat.occupied {
-  background-color: lch(87% 1.45 19.1);
-  cursor: not-allowed;
-}
-
-.row {
+.legend li {
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
 
 .screen {
   background: #fff;
-  height: 70px;
-  width: 100%;
-  margin: 15px 0;
-  transform: rotateX(-45deg);
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #fff;
 }
 
-.showcase {
+.seats {
   display: flex;
-  justify-content: space-between;
-  list-style: none;
-  padding: 5px;
-}
-
-.showcase li {
-  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
-.text {
+.row {
+  display: flex;
+}
+
+.seat {
+  height: 28px;
+  width: 32px;
+  margin: 6px;
+  background: hsl(66, 85%, 46%);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.seat:hover {
+  transform: scale(1.2);
+  background: #6feaf6;
+}
+
+.seat.selected {
+  background: #22c55e;
+}
+
+.seat.occupied {
+  background: #e5e7eb;
+  cursor: not-allowed;
+}
+
+.summary {
   margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  padding: 12px 25px;
+  background: #22c55e;
+  color: #000;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4ade80;
 }
