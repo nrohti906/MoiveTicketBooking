@@ -7,37 +7,60 @@
 </head>
 <body>
 
-<div class="container">
-  <h1>🎬 Movie Ticket Booking</h1>
+<header>
+  <h1>🎬 CinemaBook</h1>
+  <p>Book your favorite movie seats</p>
+</header>
 
-  <div class="movie-container">
-    <label>Select Movie:</label>
-    <select id="movie">
-      <option value="10">Avengers ($10)</option>
-      <option value="12">Inception ($12)</option>
-      <option value="8">Toy Story ($8)</option>
-    </select>
+<div class="container">
+
+  <!-- Movie Selection -->
+  <div class="movie-card">
+    <img src="https://i.imgur.com/8UG2KQp.jpg" alt="Movie Poster">
+    <div class="movie-info">
+      <h2>Select Movie</h2>
+      <select id="movie">
+        <option value="10">Avengers – $10</option>
+        <option value="12">Inception – $12</option>
+        <option value="8">Toy Story – $8</option>
+      </select>
+
+      <h3>Show Time</h3>
+      <select id="time">
+        <option>10:00 AM</option>
+        <option>2:00 PM</option>
+        <option>6:00 PM</option>
+        <option>10:00 PM</option>
+      </select>
+    </div>
   </div>
 
-  <ul class="showcase">
-    <li><div class="seat"></div><small>Available</small></li>
-    <li><div class="seat selected"></div><small>Selected</small></li>
-    <li><div class="seat occupied"></div><small>Occupied</small></li>
+  <!-- Seat Legend -->
+  <ul class="legend">
+    <li><span class="seat"></span> Available</li>
+    <li><span class="seat selected"></span> Selected</li>
+    <li><span class="seat occupied"></span> Occupied</li>
   </ul>
 
-  <div class="screen"></div>
+  <!-- Screen -->
+  <div class="screen">SCREEN</div>
 
+  <!-- Seats -->
   <div class="seats">
-    <!-- Row 1 -->
+    <div class="row">
+      <div class="seat"></div>
+      <div class="seat"></div>
+      <div class="seat occupied"></div>
+      <div class="seat"></div>
+      <div class="seat"></div>
+    </div>
     <div class="row">
       <div class="seat"></div>
       <div class="seat occupied"></div>
       <div class="seat"></div>
       <div class="seat"></div>
-      <div class="seat occupied"></div>
+      <div class="seat"></div>
     </div>
-
-    <!-- Row 2 -->
     <div class="row">
       <div class="seat"></div>
       <div class="seat"></div>
@@ -47,10 +70,13 @@
     </div>
   </div>
 
-  <p class="text">
-    Selected Seats: <span id="count">0</span>
-    Total Price: $<span id="total">0</span>
-  </p>
+  <!-- Summary -->
+  <div class="summary">
+    <p>Seats Selected: <span id="count">0</span></p>
+    <p>Total Price: $<span id="total">0</span></p>
+    <button id="bookBtn">🎟 Book Now</button>
+  </div>
+
 </div>
 
 <script src="script.js"></script>
